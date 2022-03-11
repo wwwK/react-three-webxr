@@ -118,6 +118,10 @@ class PFE {
         fbx.scale.set(0.005, 0.005, 0.005);
         // fbx.rotateX(90)
         self.scene.add(fbx);
+
+        const light = new THREE.PointLight("#fff", 1, 100);
+        light.position.set(fbx.position.x, fbx.position.y + 2, fbx.position.z);
+        self.scene.add(light);
       },
       // called while loading is progressing
       function (xhr) {
